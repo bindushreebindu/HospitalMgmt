@@ -1,0 +1,16 @@
+.nav-link{
+	color: white !important;
+}
+
+.nav-link:hover{
+color:red !important;
+background-color:lightblue;
+border-radius: 10px;
+}
+.navbar-brand:hover{
+color:red !important;
+font-weight:bold;
+}
+.nav-item{
+	color: purple;
+}

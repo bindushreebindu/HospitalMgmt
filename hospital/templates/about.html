@@ -1,0 +1,41 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+{% block body %}
+<style>
+
+.bg{
+background-repeat: no-repeat;
+background-size:cover;
+background-position: 20% 20%;
+}
+.text-center{
+	color: red;
+}
+.text{
+	text-align: center;
+}
+</style>
+<body class="bg" style="background-image: url('{% static 'images/h18.jpg' %}')";>	
+<!--div class="container" style = "margin-top:50px"-->
+<h2 class="text-center">About Us</h2>
+<marquee style="font-size: 30px;color:purple;"><B>Welcome To Hospital Management System.....</B></marquee>
+<br><br>
+<h3>About us:</h3>
+<p style="font-size: 20px;color:blue;">Hospital management system is a computer system that helps manage the information related to health care and aids in the job completion of health care providers effectively. They manage the data related to all departments of healthcare such as,patient records,appointments,doctors records...<p>
+<h3 style="font-size: :25px;color:black;"> Why is HMS important for a hospital?</h3>
+<p style="color :blue;font-size: 20px;">HMS was introduced to solve the complications coming from managing all the paper works of every patient associated with the various departments of hospitalization with confidentiality. HMS provides the ability to manage all the paperwork in one place, reducing the work of staff in arranging and analyzing the paperwork of the patients. HMS does many works like:</p><br>
+
+<h2 style="font-size: 20px; color:blue;">* Maintain the medical records of the patient </h2><br> 
+
+<h2 style="font-size: 20px; color:blue;">* Maintain the contact details of the patient</h2><br>
+
+<h2 style="font-size: 20px; color:blue;">* Keep track of the appointment dates</h2>
+
+
+
+
+</div>
+</body>
+
+{% endblock %}
+

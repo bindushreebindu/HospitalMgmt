@@ -1,0 +1,78 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+{% block body %}
+<style>
+
+.bg{
+background-repeat: no-repeat;
+background-position: 20% 20%;
+background-attachment: fixed;
+background-size: cover;
+}
+
+
+.size{
+	font-size: 20px;
+	color: black;
+}
+.a{
+	font-size: 30px;
+	color: purple;
+}
+
+
+</style>
+
+
+
+
+<div class="container" style = "margin-top:5px">
+<body class="bg" style="background-image: url('{% static 'images/h43.jpg' %}')";>
+<div class="a">
+<marquee behavior="alternate"><B>Welcome To Surgeon Department.....</B></marquee></div>		
+	<h3 style="font-size: 30px;color: red;" class="text-center">Add Appointment</h3>
+	<br><br>
+	<form method="post" action="">
+		 {% csrf_token %}
+		<h2 class="size">Doctor Name</h2>
+	   <select name="doctor" class="form-control">
+			{% for i in doctor %}
+		   <option value="{{i.name}}">{{i.name}} {{i.special}} [{{i.id}}]</option>
+			{% endfor %}
+       </select>
+       <br>
+		<h2 class="size">Patient</h2>
+		<select name="patient" class="form-control">
+			{% for i in patient %}
+		   <option value="{{i.name}}">{{i.name}} [{{i.id}}]</option>
+			{% endfor %}
+       </select>
+		<br>
+		<h2 class="size">Date</h2>
+		<input type = "date" class="form-control" name="date" required>
+		<h2 class="size">Time</h2>
+		<input type = "time" class="form-control" name="time" required>
+		<br>
+		<input type = "submit" value="Submit" class="form-control btn btn-danger">
+
+
+	</form>
+	</body>
+</div>
+
+{% ifequal error "no" %}
+<script>
+	alert('Record Saved Successfully');
+	window.location=('{% url 'view2_appointment' %}');
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+	alert('Oops,Something went wrong, Try again');
+</script>
+{% endifequal %}
+
+
+
+{% endblock %}
